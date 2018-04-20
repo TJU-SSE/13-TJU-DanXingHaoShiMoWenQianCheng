@@ -6,11 +6,11 @@ print("Author : MSRA team of Tongji University")
 
 file_in = input("Input the name of Wechat audio:")
 file_out = input("Input the name of output audio:")
+file_in = file_in.rstrip()
 file_in = file_in.strip('"')
 
 fs_in = open(file_in,"rb")
-path = os.path.split(__file__)
-print(path)
+path = os.path.split(os.path.realpath(__file__))
 os.chdir(path[0])
 fs_out = open('temp.amr',"wb")
 
